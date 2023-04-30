@@ -1,0 +1,452 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+/* to fix ->
+1. add media query for tablet screen size (500px to 900px)
+2. fixing nav-bar for small screen so when menu button clicked it doesnt take its extra 
+space and overlap on the section-one
+3. add hover effect on the social media icons 
+4. give the 'Request Invite' button proper styling
+5. fix the .sidebar__photo background image and content image in accordance to design
+ */
+
+body{
+    font-family: 'Public Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+p{
+    font-size: .9rem;
+    color: hsl(233, 8%, 62%);
+    font-weight: 400;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+h2{
+    font-size: 1.95rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+h3{
+    font-size: 1.09em;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+header{
+    text-align: center;
+    max-width: 100%;
+    margin: 1.5em 0;
+}
+
+.nav-toggle{
+    cursor: pointer;
+    border: 0;
+    border-radius: 100px;
+    width: 2rem;
+    background-color: #fff;
+    transition: opacity 1000ms ease;
+
+    position: absolute;
+    right: 0;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus{
+    opacity: 0.75;
+}
+
+.menu{
+    width: 50%;
+    position: relative;
+}
+
+.menu,
+.menu::before,
+.menu::after{
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.menu::before,
+.menu::after{
+    content: '';
+    width: 100%;
+}
+
+.nav{
+    width: 100%;
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+}
+
+.nav__list{
+    list-style: none;
+    padding: 0;
+}
+
+.nav__list>li{
+    position: relative;
+}
+
+.nav__list>li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: hsl(136, 65%, 51%);
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  transform-origin: center bottom;
+}
+
+.nav__list>li:hover::after {
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+.nav__list--secondary{
+    margin-top: 1.5rem;
+}
+
+.nav__item{
+    margin-top: 0.75em;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: hsl(233, 8%, 62%);
+    font-size: 0.9rem;
+}
+
+.nav--visible{
+    visibility: visible;
+    height: auto;
+    position: relative;
+}
+
+.nav__link--btn{
+    background-color: hsl(136, 65%, 51%);
+    color: #fff;
+    font-weight: bold;
+    padding: 1em 2em;
+    border-radius: 100px;
+    font-size: 0.8rem;
+}
+
+.nav__link--btn:hover{
+    opacity: 0.7;
+}
+
+.sidebar__photo{
+    background-image: url('images/bg-intro-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section-one{
+    text-align: center;
+    padding-bottom: 5em;
+}
+
+.btn{
+    margin-top: 2em;
+}
+
+.home{
+    background-color: hsl(0, 0%, 96%);
+    padding: 3em 0;
+    text-align: center;
+}
+
+.home__content{
+    padding-bottom: 1em;
+}
+
+.home__article{
+    padding-top: 1em;
+}
+
+.section-two{
+    padding: 3em 0;
+    background-color: hsl(0, 0%, 98%);
+}
+
+.section__article{
+    padding-bottom: 3em;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    background-color: #fff;
+}
+
+.section__article--img{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    min-width: 100%;
+}
+
+.section__content{
+    padding: 0 1.5em;
+}
+
+.writer--name{
+    font-size: 0.75rem;
+}
+
+.section__content--link:hover{
+    color: hsl(136, 65%, 51%);
+}
+
+.section__content--para{
+    font-size: 0.85rem;
+}
+
+.foot{
+    background-color: hsl(233, 26%, 24%);
+    text-align: center;
+    padding: 3em 0;
+}
+
+.foot--logo{
+    filter: invert(1);
+}
+
+.company-logo{
+    padding: 1em 0;
+}
+
+.company-logo>a{
+    padding: 0 .40em;
+}
+
+ /* Add the hover effect on footer social-media-icons here -> */
+
+.foot__list--primary{
+    padding-top: 0.5em;
+}
+
+.foot__list--secondary{
+    padding-bottom: .5em;
+}
+
+.foot__item{
+    padding: .4em 0;
+}
+
+.foot__link{
+    color: #fff;
+}
+
+.foot__link:hover{
+    color: hsl(136, 65%, 51%);
+}
+
+.foot--para{
+    padding-top: 2em;
+}
+
+.attribution{
+    font-size: 1.5rem;
+}
+
+.attribution>a:hover{
+    color: limegreen;
+}
+
+@media (min-width : 700px) {
+    
+    h1{
+        font-size: 3.5em;
+        line-height: 1.1;
+        font-weight: 300;
+    }
+
+    h2{
+        text-align: start;
+    }
+
+    img{
+        max-height: 100%;
+    }
+    
+    .container{
+        max-width: 80%;
+    }
+
+    .row{
+        display: flex;
+        gap: 1.5em;
+        justify-content: space-between;
+    }
+
+    .row-2{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .row-reverse{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    .logo{
+        margin: auto 0;
+        /* margin-top: 0.5em; */
+    }
+    
+    .nav{
+        visibility: visible;
+        position: relative;
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav__list{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .nav__item{
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav__item+ .nav__item{
+        margin-left: 2em;
+    }
+
+    .nav__list--secondary{
+        margin: 0;
+    }
+
+    .nav-toggle{
+        display: none;
+    }
+
+    .section-one{
+        background-color: hsl(0, 0%, 98%);
+        padding: 0;
+    }
+    
+    .sidebar__photo{
+        background-image: url('images/bg-intro-desktop.svg');
+        width: 55%;
+    }
+
+    .section__content{
+        margin: auto 0;
+        text-align: start;
+        width: 45%;
+        padding: 0;
+    }
+
+    .section__para{
+        line-height: 1.2;
+        font-size: 1rem;
+    }
+
+    .home{
+        text-align: start;
+    }
+
+    .home__content{
+        display: inline-block;
+    }
+
+    .home__para{
+        line-height: 1.4;
+    }
+
+    .home__article{
+        padding-top: 1.5em;
+    }
+
+    .home__article--heading{
+        padding-top: 2em;
+    }
+
+    .home__article--para{
+        line-height: 1.5;
+    }
+
+    .section-two{
+        padding-bottom: 4em;
+    }
+    .section__article{
+        padding: 0;
+        margin: 0;
+    }
+    
+    .section__article--img{
+        height: 30vh;
+        min-width: auto;
+    }
+    
+    .section__content--article{
+        padding: 0.75em 1em;
+    }
+
+    .writer--name{
+        font-size: 0.7em;
+    }
+
+    .footer__content--primary{
+        min-width: 60%;
+    }
+
+    .footer__content{
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .foot__list--primary,
+    .foot__list--secondary{
+        padding: 0;
+    }
+
+    .company-logo{
+        padding-top: 3.5em;
+    }
+
+    .foot-btn{
+        margin-top: 1em;
+    }
+}
